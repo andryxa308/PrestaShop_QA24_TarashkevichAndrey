@@ -12,12 +12,15 @@ import java.util.concurrent.TimeUnit;
 
 
 @Log4j2
-@Listeners(TestListener.class)
+@Listeners(InvokedListener.class)
 public class BaseTest {
     final static String ITEM_NAME="Printed Dress";
     final static String ITEM_PRICE="31,20 ₴";
     final static String ITEM_DESCRIPTION="100% cotton double printed dress. Black and white striped top and orange high waisted skater skirt bottom.";
     final static String YEAR="1999";
+    private final static String URL = PropertyReader.getProperty("base_url");
+
+    protected final static String PASSWORD = PropertyReader.getProperty("password");
     protected String email;
     protected String password ;
 
@@ -56,6 +59,7 @@ public class BaseTest {
     public void navigateAndCreateAcc() {
         email = faker.internet().emailAddress();
         password = faker.internet().password();
+
         log.debug("Page opened");
         driver.get("http://prestashop.qatestlab.com.ua/en/");
         homePage.clickToSignInButton();
@@ -72,7 +76,7 @@ public class BaseTest {
         createAnAccountPage.clickSubmitAccount();
 
     }
-    @AfterMethod(alwaysRun = true, description = "close browser")
+    @AfterMethod(alwaysRun = true, description = "clear cookies")
     public void clearCookies() {
         log.debug("Clear all cookies here");
         driver.manage().deleteAllCookies();

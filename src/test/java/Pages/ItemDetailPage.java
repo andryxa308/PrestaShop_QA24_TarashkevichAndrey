@@ -12,19 +12,19 @@ public class ItemDetailPage extends BasePage {
     public ItemDetailPage(WebDriver driver) {
         super(driver);
     }
-    private final static By itemName= By.cssSelector("[itemprop='name']");
-    private final static By itemNameQuick=By.xpath("//div[@class='pb-center-column col-xs-12 col-sm-4']//h1");
-    private final static By itemPicture=By.cssSelector("[id='bigpic']");
-    private final static By itemPrice=By.xpath("//span[@id='our_price_display']") ;
-    private final static By itemPriceQuick = By.cssSelector("#our_price_display");
-    private final static By itemShortDescription= By.cssSelector("#short_description_content");
-    private final static By itemShortDescriptionQuick= By.xpath("//div[@id='short_description_content']//p");
-    private final static By addToCartButton= By.cssSelector("#add_to_cart");
-    private final static By addToCartItemIcon = By.xpath("//h2[text()][1]");
-    private final static By clickCheckOutButton = By.xpath("//a[@class='btn btn-default button button-medium']");
-    private final static By clickContinueShoppingButton = By.xpath("//span[@class='continue btn btn-default button exclusive-medium']");
-   private final static By clickCloseWindowButton = By.cssSelector(".cross");
-   private final static By cartButtonItemDetailsPage = By.cssSelector(".shopping_cart a");
+    private  By itemName= By.cssSelector("[itemprop='name']");
+    private  By itemNameQuick=By.xpath("//div[@class='pb-center-column col-xs-12 col-sm-4']//h1");
+    private  By itemPicture=By.cssSelector("[id='bigpic']");
+    private  By itemPrice=By.xpath("//span[@id='our_price_display']") ;
+    private  By itemPriceQuick = By.cssSelector("#our_price_display");
+    private  By itemShortDescription= By.cssSelector("#short_description_content");
+    private  By itemShortDescriptionQuick= By.xpath("//div[@id='short_description_content']//p");
+    private  By addToCartButton= By.cssSelector("#add_to_cart");
+    private  By addToCartItemIcon = By.xpath("//h2[text()][1]");
+    private  By clickCheckOutButton = By.xpath("//a[@class='btn btn-default button button-medium']");
+    private  By clickContinueShoppingButton = By.xpath("//span[@class='continue btn btn-default button exclusive-medium']");
+   private  By clickCloseWindowButton = By.cssSelector(".cross");
+   private  By cartButtonItemDetailsPage = By.cssSelector(".shopping_cart a");
     @Override
     public void waitForPageLoaded() {
         log.info("Waiting for item details page loaded");

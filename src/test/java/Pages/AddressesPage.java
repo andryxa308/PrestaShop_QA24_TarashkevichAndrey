@@ -17,18 +17,18 @@ public class AddressesPage extends BasePage {
     }
 
 
-    private final static By addressPageHeader= By.cssSelector(".info-title");
-    private final static By firstNameAddressPage= By.xpath("//input[@id='firstname']");
-    private final static By lastNameAddressPage= By.xpath("//input[@id='lastname']");
-    private final static By address= By.xpath("//input[@id='address1']");
-    private final static By zipPostalCode= By.xpath("//input[@id='postcode']");
-    private final static By city= By.xpath("//input[@id='city']");
-    private final static By homePhone= By.xpath("//input[@id='phone']");
-    private final static By addressTitle= By.xpath("//input[@id='alias']");
-    private final static By saveAddressButton= By.xpath("//button[@id='submitAddress']");
-    private final static By addressCompleteIcon= By.xpath("//h3[ text()='Your billing address']");
-    private final static By stateSelect=By.cssSelector("#id_state");
-    private final static By proceedToCheckoutOnAddressesPage=By.xpath("//button[@name='processAddress']");
+    private  By addressPageHeader= By.cssSelector(".info-title");
+    private  By firstNameAddressPage= By.xpath("//input[@id='firstname']");
+    private  By lastNameAddressPage= By.xpath("//input[@id='lastname']");
+    private  By address= By.xpath("//input[@id='address1']");
+    private  By zipPostalCode= By.xpath("//input[@id='postcode']");
+    private  By city= By.xpath("//input[@id='city']");
+    private  By homePhone= By.xpath("//input[@id='phone']");
+    private  By addressTitle= By.xpath("//input[@id='alias']");
+    private  By saveAddressButton= By.xpath("//button[@id='submitAddress']");
+    private  By addressCompleteIcon= By.xpath("//h3[ text()='Your billing address']");
+    private  By stateSelect=By.cssSelector("#id_state");
+    private  By proceedToCheckoutOnAddressesPage=By.xpath("//button[@name='processAddress']");
 
 
     @Override

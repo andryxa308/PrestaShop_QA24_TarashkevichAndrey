@@ -11,11 +11,11 @@ public class ShippingPage extends BasePage{
 
         super(driver);
     }
-    private final static By agreeCheckBoxOnShippingPage = By.cssSelector("#cgv");
-    private final static By proceedToCheckoutButtonOnShippingPage = By.xpath("//button[@name='processCarrier']");
-    private final static By shippingPageHeader =By.cssSelector(".page-heading");
-    private final static By errorMessage = By.cssSelector(".fancybox-error");
-    private final static By closeErrorMessageButton= By.xpath("//a[@title='Close']");
+    private  By agreeCheckBoxOnShippingPage = By.cssSelector("#cgv");
+    private  By proceedToCheckoutButtonOnShippingPage = By.xpath("//button[@name='processCarrier']");
+    private  By shippingPageHeader =By.cssSelector(".page-heading");
+    private  By errorMessage = By.cssSelector(".fancybox-error");
+    private  By closeErrorMessageButton= By.xpath("//a[@title='Close']");
     @Override
     public void waitForPageLoaded() {
         log.info("Wait for shipping page loaded");

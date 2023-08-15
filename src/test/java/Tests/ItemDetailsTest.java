@@ -4,7 +4,9 @@ import Pages.AuthenticationPage;
 import Pages.CartPage;
 import Pages.ItemDetailPage;
 import Pages.ProductsPage;
-import io.qameta.allure.*;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -27,7 +29,6 @@ public class ItemDetailsTest extends BaseTest {
     @Test(groups={"Regression"},dataProvider = "inventoryItemsTestOnProductPageData")
     @Description("Check item name, price and description")
     @Severity(SeverityLevel.NORMAL)
-    @Link("http://prestashop.qatestlab.com.ua/")
     public void inventoryItemsTestOnProductPage(String itemName, String itemPrice) {
         homePage.clickToDressesSectionButton();
         productsPage.clickCasualDressesButton();
@@ -52,7 +53,6 @@ public class ItemDetailsTest extends BaseTest {
     @Test(groups={"Regression"})
     @Description("Check item name, price and description")
     @Severity(SeverityLevel.NORMAL)
-    @Link("http://prestashop.qatestlab.com.ua/")
     public void inventoryItemsTestOnItemDetailsPage(){
         homePage.clickToDressesSectionButton();
         productsPage.clickCasualDressesButton();

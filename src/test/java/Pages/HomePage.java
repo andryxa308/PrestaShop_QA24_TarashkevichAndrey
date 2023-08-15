@@ -14,18 +14,21 @@ public class HomePage  extends BasePage{
         log.info("Waiting for home page loaded");
         waitForElementDisplayed(home_Picture);
     }
-    protected final static By home_Picture= By.xpath("//img[@src='http://prestashop.qatestlab.com.ua/modules/homeslider/images/sample-1.jpg']");
-    private final static By signInHomePageButton = By.cssSelector(".login");
-    private final static By cartButton = By.cssSelector(".shopping_cart");
-    private final static By searchInput = By.cssSelector("#search_query_top");
-    private final static By searchButton = By.xpath("//button[@name='submit_search']");
-    private final static By womenSection = By.xpath("//a[@title='Women']");
-    private final static By dressesSection = By.xpath("//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/descendant::a[@title='Dresses'][2]");
-    private final static By tShirtSection = By.xpath("//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/descendant::a[@title='T-shirts'][2]");
-    private final static By headerLogo = By.cssSelector("#header_logo");
-    private final static By signOutHomePageButton = By.cssSelector(".logout");
-    private final static  By item =By.xpath("//h5//a[@title='Blouse']");
-    private final static By accountButton = By.cssSelector(".account");
+
+
+
+    protected  By home_Picture= By.xpath("//img[@src='http://prestashop.qatestlab.com.ua/modules/homeslider/images/sample-1.jpg']");
+    private  By signInHomePageButton = By.cssSelector(".login");
+    private  By cartButton = By.cssSelector(".shopping_cart");
+    private  By searchInput = By.cssSelector("#search_query_top");
+    private  By searchButton = By.xpath("//button[@name='submit_search']");
+    private  By womenSection = By.xpath("//a[@title='Women']");
+    private  By dressesSection = By.xpath("//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/descendant::a[@title='Dresses'][2]");
+    private  By tShirtSection = By.xpath("//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']/descendant::a[@title='T-shirts'][2]");
+    private  By headerLogo = By.cssSelector("#header_logo");
+    private  By signOutHomePageButton = By.cssSelector(".logout");
+    private   By item =By.xpath( "//h5//a[@title=' + itemName + ']");
+    private  By accountButton = By.cssSelector(".account");
 
     public void clickToSignInButton(){
         log.info("Click 'Sign in' button");

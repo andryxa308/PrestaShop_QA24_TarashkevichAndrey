@@ -13,20 +13,20 @@ public class CreateAnAccountPage extends BasePage {
     public CreateAnAccountPage(WebDriver driver) {
         super(driver);
     }
-    private final static String URL = "http://prestashop.qatestlab.com.ua/en/authentication?back=my-account#account-creation";
-    private final static By accountCreateIcon = By.xpath("//h1[@class='page-heading' and text()]");
-    private final static By titleButton = By.cssSelector("#id_gender2");
-    private final static By firstNameInput = By.cssSelector("#customer_firstname");
-    private final static By lastNameInput = By.cssSelector("#customer_lastname");
-    private final static By passwordInput = By.cssSelector("#passwd");
-    private final static By submitAccountButton = By.cssSelector("#submitAccount");
-    private final static By accountIcon = By.xpath("//h1[@class='page-heading']");
-    private final static By errorMassage=By.xpath("//div[@class='alert alert-danger']/descendant::li[text()=' is required.']");
+    private  String URL = "http://prestashop.qatestlab.com.ua/en/authentication?back=my-account#account-creation";
+    private  By accountCreateIcon = By.xpath("//h1[@class='page-heading' and text()]");
+    private  By titleButton = By.cssSelector("#id_gender2");
+    private  By firstNameInput = By.cssSelector("#customer_firstname");
+    private  By lastNameInput = By.cssSelector("#customer_lastname");
+    private  By passwordInput = By.cssSelector("#passwd");
+    private  By submitAccountButton = By.cssSelector("#submitAccount");
+    private  By accountIcon = By.xpath("//h1[@class='page-heading']");
+    private  By errorMassage=By.xpath("//div[@class='alert alert-danger']/descendant::li[text()=' is required.']");
 
-    private final static By dayOfBirthSelect = By.xpath("//select[@id='days']");
-    private final static By monthsOfBirthSelect = By.xpath("//select[@id='months']");
+    private  By dayOfBirthSelect = By.xpath("//select[@id='days']");
+    private  By monthsOfBirthSelect = By.xpath("//select[@id='months']");
 
-    private final static By yearOfBirthInput = By.xpath("//div[@id='cuselFrame-years']");
+    private  By yearOfBirthInput = By.xpath("//div[@id='cuselFrame-years']");
 
 
     @Override
@@ -34,6 +34,7 @@ public class CreateAnAccountPage extends BasePage {
         log.info("Waiting for create page loaded");
         waitForElementDisplayed(accountCreateIcon);
     }
+
 
     public void clickTitleButton() {
         log.info("Clicking 'Title' button");

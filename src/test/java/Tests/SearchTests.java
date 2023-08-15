@@ -4,7 +4,6 @@ import Pages.HomePage;
 import Pages.ItemDetailPage;
 import Pages.ProductsPage;
 import io.qameta.allure.Description;
-import io.qameta.allure.Link;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
@@ -27,7 +26,6 @@ public class SearchTests extends BaseTest{
     @Test(groups = {"Regression"})
     @Description("Search dresses and how many dresses are in prestashop")
     @Severity(SeverityLevel.NORMAL)
-    @Link("http://prestashop.qatestlab.com.ua/")
     public void positiveSearchDressesTest() {
         homePage.setProductNameToSearchInput(ITEM_NAME);
         homePage.clickSearchButton();
@@ -37,7 +35,6 @@ public class SearchTests extends BaseTest{
     @Test(groups = {"Negative"})
     @Description("Search not exist item")
     @Severity(SeverityLevel.TRIVIAL)
-    @Link("http://prestashop.qatestlab.com.ua/")
     public void negativeSearchItemTest() {
         homePage.setProductNameToSearchInput(ITEM);
         homePage.clickSearchButton();
@@ -46,5 +43,15 @@ public class SearchTests extends BaseTest{
         Assert.assertTrue(productsPage.isResultsMassageDisplayed());
         Assert.assertEquals(productsPage.getResultsMassageText(),"0 results have been found.");
     }
+    @Test(groups = {"Regression"})
+    @Description("Search product on home page")
+    @Severity(SeverityLevel.NORMAL)
+    public void searchProductTest() {
+        homePage.setProductNameToSearchInput(ITEM_NAME);
+        homePage.clickSearchButton();
+        Assert.assertTrue(productsPage.isResultsMassageDisplayed());
+        Assert.assertEquals(productsPage.getResultsMassageText(), "13 results have been found.");
+    }
+
 }
 

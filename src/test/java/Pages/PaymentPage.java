@@ -9,8 +9,8 @@ public class PaymentPage extends BasePage{
         super(driver);
     }
 
-    private final static By warningOnPaymentPage = By.xpath("//p[@class='alert alert-warning']");
-    private final static By paymentPageHeader =By.cssSelector(".page-heading");
+    private  By warningOnPaymentPage = By.xpath("//p[@class='alert alert-warning']");
+    private  By paymentPageHeader =By.cssSelector(".page-heading");
 
     @Override
     public void waitForPageLoaded() {

@@ -12,8 +12,8 @@ public class MyAccountPage extends BasePage{
     public MyAccountPage(WebDriver driver) {
         super(driver);
     }
-    private final static By myAddresses = By.xpath("//a[@title='Addresses']");
-    private final static By deleteAddressesButton = By.xpath("//a[@title='Delete']");
+    private  By myAddresses = By.xpath("//a[@title='Addresses']");
+    private  By deleteAddressesButton = By.xpath("//a[@title='Delete']");
     @Override
     public void waitForPageLoaded() {
 

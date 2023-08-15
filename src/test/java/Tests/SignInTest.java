@@ -3,7 +3,6 @@ package Tests;
 import Pages.AuthenticationPage;
 import Pages.CreateAnAccountPage;
 import io.qameta.allure.Description;
-import io.qameta.allure.Link;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
@@ -13,7 +12,8 @@ import org.testng.annotations.Test;
 
 public class SignInTest extends BaseTest {
 
-    final static String PASSWORD = "100887";
+    final static String PASSWORD = "100887" ;
+
     final static String FIRST_NAME = "Andrey";
     final static String LAST_NAME = "Tarashkevich";
     AuthenticationPage authenticationPage;
@@ -28,7 +28,6 @@ public class SignInTest extends BaseTest {
     @Test(groups = {"Smoke"})
     @Description("Positive Sign In Test")
     @Severity(SeverityLevel.CRITICAL)
-    @Link("http://prestashop.qatestlab.com.ua/")
     public void positiveSignInTest() {
         homePage.clickToSignOutButton();
         authenticationPage.authentication(email, password);
@@ -39,7 +38,6 @@ public class SignInTest extends BaseTest {
     @Test(dataProvider = "negativeCreateAccount", groups = {"Negative"})
     @Description("Troubles with first name, last name and password when you try to create new account")
     @Severity(SeverityLevel.CRITICAL)
-    @Link("http://prestashop.qatestlab.com.ua/")
     public void negativeCreateAccountTest(String email, String firstName, String lastName, String password, String errorMessage) {
         homePage.clickToSignOutButton();
         authenticationPage.setEmail(email);

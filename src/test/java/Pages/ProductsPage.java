@@ -10,21 +10,21 @@ public class ProductsPage extends BasePage {
     public ProductsPage(WebDriver driver) {
         super(driver);
     }
-    private final static By casualDresses = By.xpath("//div[@id='categories_block_left']/descendant::a[contains(text(), 'Casual Dresses')]");
-    private final static By eveningDresses = By.xpath("//div[@id='categories_block_left']/descendant::a[contains(text(), 'Evening Dresses')]");
-    private final static By summerDresses = By.xpath("//div[@id='categories_block_left']/descendant::a[contains(text(), 'Summer Dresses')]");
-    private final static By dressPageIcon = By.cssSelector(".cat-name");
-    private final static By resultsMessage = By.xpath("//span[@class='heading-counter']");
-    private final static By productName= By.cssSelector("#center_column .product-name");
-    private final static By productPrice = By.cssSelector("#center_column .right-block [itemprop='price']");
-private final static By itemLink= By.xpath("//div[@class='right-block']//a[@class='product-name']");
-    private final static By productLink =By.cssSelector("a[class$=_link]");
+    private  By casualDresses = By.xpath("//div[@id='categories_block_left']/descendant::a[contains(text(), 'Casual Dresses')]");
+    private  By eveningDresses = By.xpath("//div[@id='categories_block_left']/descendant::a[contains(text(), 'Evening Dresses')]");
+    private  By summerDresses = By.xpath("//div[@id='categories_block_left']/descendant::a[contains(text(), 'Summer Dresses')]");
+    private  By dressPageIcon = By.cssSelector(".cat-name");
+    private  By resultsMessage = By.xpath("//span[@class='heading-counter']");
+    private  By productName= By.cssSelector("#center_column .product-name");
+    private  By productPrice = By.cssSelector("#center_column .right-block [itemprop='price']");
+private  By itemLink= By.xpath("//div[@class='right-block']//a[@class='product-name']");
+    private  By productLink =By.cssSelector("a[class$=_link]");
     private final String productContainerLocator
             = "//*[@class='product_img_link' and @title='%s']/ancestor::div[@class='product-container']";
     private final String productContainerPriceLocator
             = "//span[@class='price product-price' and contains(text(),'%s ')] /ancestor::div[@class='product-container']";
 
-    private final static By warningAlert = By.xpath("//p[@class='alert alert-warning']");
+    private final  By warningAlert = By.xpath("//p[@class='alert alert-warning']");
 
     @Override
     public void waitForPageLoaded() {

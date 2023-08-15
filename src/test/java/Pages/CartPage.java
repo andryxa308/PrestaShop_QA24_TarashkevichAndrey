@@ -13,11 +13,11 @@ public class CartPage extends BasePage {
     public CartPage(WebDriver driver) {
         super(driver);
     }
-    private final static By cartPageHeader = By.cssSelector("#cart_title");
-    private final static By trashButton=By.cssSelector(".cart_quantity_delete");
-    private final static By proceedToCheckoutButton=By.xpath("//span[text()='Proceed to checkout']");
-    private final static By valueOfCart =By.cssSelector(".heading-counter");
-    private final static By cartButton=By.cssSelector(".shopping_cart");
+    private  By cartPageHeader = By.cssSelector("#cart_title");
+    private  By trashButton=By.cssSelector(".cart_quantity_delete");
+    private  By proceedToCheckoutButton=By.xpath("//span[text()='Proceed to checkout']");
+    private  By valueOfCart =By.cssSelector(".heading-counter");
+    private  By cartButton=By.cssSelector(".shopping_cart");
 
     @Override
     public void waitForPageLoaded() {

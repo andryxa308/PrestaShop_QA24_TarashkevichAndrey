@@ -2,7 +2,6 @@ package Tests;
 
 import Pages.*;
 import io.qameta.allure.Description;
-import io.qameta.allure.Link;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
@@ -42,7 +41,6 @@ public class CartTest extends BaseTest {
     final static String ADDRESS_TITLE_FOR_ADDRESS_PAGE="First address";
 
     @Test(groups = {"Smoke"})
-    @Link("http://prestashop.qatestlab.com.ua/")
     @Description("Add product to cart")
     @Severity(SeverityLevel.CRITICAL)
     public void addItemToCartTest() {
@@ -56,7 +54,6 @@ public class CartTest extends BaseTest {
         Assert.assertEquals(itemDetailPage.getAddToCartItemIconText(),"Product successfully added to your shopping cart");
     }
     @Test(groups = {"Smoke"})
-    @Link("http://prestashop.qatestlab.com.ua/")
     @Description("Remove product from cart")
     @Severity(SeverityLevel.CRITICAL)
     public void removeItemFromCartTest() {
@@ -76,7 +73,6 @@ public class CartTest extends BaseTest {
         Assert.assertTrue(cartPage.isAlertDisplayed());
     }
     @Test(groups = {"Regression"})
-    @Link("http://prestashop.qatestlab.com.ua/")
     @Description("Actions on addresses page")
     @Severity(SeverityLevel.CRITICAL)
     public void actionsOnAddressesPageTestWithSelect() {
