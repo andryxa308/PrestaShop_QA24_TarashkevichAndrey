@@ -11,20 +11,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class SignInTest extends BaseTest {
-
-    final static String PASSWORD = "100887" ;
-
     final static String FIRST_NAME = "Andrey";
     final static String LAST_NAME = "Tarashkevich";
-    AuthenticationPage authenticationPage;
-    CreateAnAccountPage createAnAccountPage;
-
-    @BeforeClass(alwaysRun = true)
-    public void initialise() {
-        authenticationPage = new AuthenticationPage(driver);
-        createAnAccountPage = new CreateAnAccountPage(driver);
-    }
-
     @Test(groups = {"Smoke"})
     @Description("Positive Sign In Test")
     @Severity(SeverityLevel.CRITICAL)

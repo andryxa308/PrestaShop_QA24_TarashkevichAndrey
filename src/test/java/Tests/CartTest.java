@@ -9,29 +9,12 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class CartTest extends BaseTest {
-    AuthenticationPage authenticationPage;
-    CreateAnAccountPage createAnAccountPage;
     CartPage cartPage;
     HomePage homePage;
     ProductsPage productsPage;
     ItemDetailPage itemDetailPage;
     AddressesPage addressesPage;
     MyAccountPage myAccountPage;
-
-
-    @BeforeClass(alwaysRun = true)
-    public void initialise(){
-        authenticationPage=new AuthenticationPage(driver);
-        createAnAccountPage=new CreateAnAccountPage(driver);
-        cartPage=new CartPage(driver);
-        homePage=new HomePage(driver);
-        productsPage=new ProductsPage(driver);
-        itemDetailPage=new ItemDetailPage(driver);
-        addressesPage=new AddressesPage(driver);
-        myAccountPage=new MyAccountPage(driver);
-
-    }
-
     final static String FIRST_NAME_FOR_ADDRESS_PAGE="Andrey";
     final static String LAST_NAME_FOR_ADDRESS_PAGE="Tarashkevich";
     final static String ADDRESS_FOR_ADDRESS_PAGE="street New home 1 flat 1";

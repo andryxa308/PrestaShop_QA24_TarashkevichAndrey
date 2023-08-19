@@ -11,14 +11,8 @@ import org.testng.annotations.Test;
 
 public class CreateAccountTest extends BaseTest {
 
-    AuthenticationPage authenticationPage;
-    CreateAnAccountPage createAnAccountPage;
 
-    @BeforeClass(alwaysRun = true)
-    public void initialise(){
-        authenticationPage=new AuthenticationPage(driver);
-        createAnAccountPage=new CreateAnAccountPage(driver);
-    }
+
     @Test(groups = {"Smoke"})
     @Description("Positive New Account Authorisation Test")
     @Severity(SeverityLevel.CRITICAL)
