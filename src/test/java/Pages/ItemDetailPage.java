@@ -25,8 +25,8 @@ public class ItemDetailPage extends BasePage {
     private  By addToCartItemIcon = By.xpath("//h2[text()][1]");
     private  By clickCheckOutButton = By.xpath("//a[@class='btn btn-default button button-medium']");
     private  By clickContinueShoppingButton = By.xpath("//span[@class='continue btn btn-default button exclusive-medium']");
-   private  By clickCloseWindowButton = By.cssSelector(".cross");
-   private  By cartButtonItemDetailsPage = By.cssSelector(".shopping_cart a");
+    private  By clickCloseWindowButton = By.cssSelector(".cross");
+    private  By cartButtonItemDetailsPage = By.cssSelector(".shopping_cart a");
     @Override
     public void waitForPageLoaded() {
         log.info("Waiting for item details page loaded");
@@ -67,7 +67,6 @@ public class ItemDetailPage extends BasePage {
     }
 
     public void waitForAddToCartItemIconDisplayed() {
-        //WebElement addToCartItemIElement=(new WebDriverWait(driver,5))
         WebElement addToCartItemIElement=(new WebDriverWait(driver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.elementToBeClickable(addToCartItemIcon));
     }
@@ -83,12 +82,12 @@ public class ItemDetailPage extends BasePage {
         log.info("Click 'Continue Shopping' button");
         driver.findElement(clickContinueShoppingButton).click();
     }
-public void clickCloseWindowButton(){
-    log.info("Click 'Close window' button");
-    driver.findElement(clickCloseWindowButton).click();
-}
-public void clickCartButtonItemDetailsButton(){
+    public void clickCloseWindowButton(){
+        log.info("Click 'Close window' button");
+        driver.findElement(clickCloseWindowButton).click();
+    }
+    public void clickCartButtonItemDetailsButton(){
         log.info("Click 'Shopping cart' button");
         driver.findElement(cartButtonItemDetailsPage).click();
-}
+    }
 }

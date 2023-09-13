@@ -8,14 +8,15 @@ import org.openqa.selenium.WebDriver;
 ;
 
 @Log4j2
-public abstract class MyAccountPage extends BasePage{
+public  class MyAccountPage extends BasePage{
     public MyAccountPage(WebDriver driver) {
         super(driver);
     }
     private  By myAddresses = By.xpath("//a[@title='Addresses']");
     private  By deleteAddressesButton = By.xpath("//a[@title='Delete']");
     @Override
-    public void waitForPageLoaded() {log.info("Wait for shipping page loaded");
+    public void waitForPageLoaded() {
+        log.info("Wait for shipping page loaded");
         waitForElementDisplayed(myAddresses);
 
     }
@@ -37,7 +38,5 @@ public abstract class MyAccountPage extends BasePage{
         driver.switchTo().defaultContent();
     }
 
-    public abstract void open();
 
-    public abstract BasePage isPageOpened();
 }

@@ -2,15 +2,17 @@ package Tests;
 
 import Pages.*;
 import com.github.javafaker.Faker;
+
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.safari.SafariDriver;
+
 import org.testng.ITestContext;
 import org.testng.annotations.*;
 
 import java.time.Duration;
+
 
 
 @Log4j2
@@ -41,114 +43,34 @@ public class BaseTest {
     protected final Faker faker=new Faker();
 
 
-    @BeforeClass(alwaysRun = true)
-    public void setUp(@Optional("chrome") String browserName, ITestContext context) throws Exception {
-        if (browserName.equals("chrome")) {
-            driver = new ChromeDriver();
-        } else if (browserName.equals("safari")) {
-            driver = new SafariDriver();
-        } else {
-            throw new Exception("Unsupported browser");
-        }
+
+    @BeforeClass(alwaysRun = true, description = "initialise driver")
+    public void setUp(@Optional("chrome") String browserName, ITestContext context)  {
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+
+
         context.setAttribute("driver", driver);
-        addressesPage= new AddressesPage(driver) {
-            @Override
-            public void open() {
+        addressesPage = new AddressesPage(driver);
 
-            }
+        authenticationPage = new AuthenticationPage(driver);
 
-            @Override
-            public BasePage isPageOpened() {
-                return null;
-            }
-        };
-        authenticationPage= new AuthenticationPage(driver) {
-            @Override
-            public void open() {
+        homePage = new HomePage(driver);
 
-            }
+        itemDetailPage = new ItemDetailPage(driver);
+        paymentPage = new PaymentPage(driver);
 
-            @Override
-            public BasePage isPageOpened() {
-                return null;
-            }
-        };
-        homePage = new HomePage(driver) {
-            @Override
-            public void open() {
+        productsPage = new ProductsPage(driver);
 
-            }
+        shippingPage = new ShippingPage(driver);
 
-            @Override
-            public BasePage isPageOpened() {
-                return null;
-            }
-        };
-        itemDetailPage=new ItemDetailPage(driver);
-        paymentPage= new PaymentPage(driver) {
-            @Override
-            public void open() {
+        cartPage = new CartPage(driver);
 
-            }
+        createAnAccountPage = new CreateAnAccountPage(driver);
 
-            @Override
-            public BasePage isPageOpened() {
-                return null;
-            }
-        };
-        productsPage= new ProductsPage(driver) {
-            @Override
-            public void open() {
-
-            }
-
-            @Override
-            public BasePage isPageOpened() {
-                return null;
-            }
-        };
-        shippingPage= new ShippingPage(driver) {
-            @Override
-            public void open() {
-
-            }
-
-            @Override
-            public BasePage isPageOpened() {
-                return null;
-            }
-        };
-        cartPage= new CartPage(driver) {
-            @Override
-            public void open() {
-
-            }
-
-            @Override
-            public BasePage isPageOpened() {
-                return null;
-            }
-        };
-        createAnAccountPage= new CreateAnAccountPage(driver) {
-            @Override
-            public BasePage isPageOpened() {
-                return null;
-            }
-        };
-        myAccountPage= new MyAccountPage(driver) {
-            @Override
-            public void open() {
-
-            }
-
-            @Override
-            public BasePage isPageOpened() {
-
-                return null;
-            }
-        };
+        myAccountPage = new MyAccountPage(driver);
     }
 
     @BeforeMethod(alwaysRun = true,description = "navigate and authorisation")

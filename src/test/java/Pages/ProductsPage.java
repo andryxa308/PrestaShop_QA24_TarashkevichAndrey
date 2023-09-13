@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 @Log4j2
-public abstract class ProductsPage extends BasePage {
+public  class ProductsPage extends BasePage {
     public ProductsPage(WebDriver driver) {
         super(driver);
     }
@@ -17,7 +17,7 @@ public abstract class ProductsPage extends BasePage {
     private  By resultsMessage = By.xpath("//span[@class='heading-counter']");
     private  By productName= By.cssSelector("#center_column .product-name");
     private  By productPrice = By.cssSelector("#center_column .right-block [itemprop='price']");
-private  By itemLink= By.xpath("//div[@class='right-block']//a[@class='product-name']");
+    private  By itemLink= By.xpath("//div[@class='right-block']//a[@class='product-name']");
     private  By productLink =By.cssSelector("a[class$=_link]");
     private final String productContainerLocator
             = "//*[@class='product_img_link' and @title='%s']/ancestor::div[@class='product-container']";
@@ -90,7 +90,5 @@ private  By itemLink= By.xpath("//div[@class='right-block']//a[@class='product-n
         return driver.findElement(warningAlert).getText();
     }
 
-    public abstract void open();
 
-    public abstract BasePage isPageOpened();
 }

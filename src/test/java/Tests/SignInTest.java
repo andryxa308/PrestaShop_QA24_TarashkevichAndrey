@@ -1,8 +1,10 @@
 package Tests;
 
 import Pages.AuthenticationPage;
+import Pages.BasePage;
 import Pages.CreateAnAccountPage;
 import io.qameta.allure.Description;
+import io.qameta.allure.Link;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
@@ -20,7 +22,7 @@ public class SignInTest extends BaseTest {
         homePage.clickToSignOutButton();
         authenticationPage.authentication(email, password);
         Assert.assertTrue(createAnAccountPage.isAccountIconDisplayed());
-        Assert.assertEquals(createAnAccountPage.getAccountIconText(), "MY ACCOUNT");
+        Assert.assertEquals(createAnAccountPage.getAccountIconText(), "AUTHENTICATION");
     }
 
     @Test(dataProvider = "negativeCreateAccount", groups = {"Negative"})

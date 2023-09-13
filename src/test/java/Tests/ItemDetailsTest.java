@@ -1,12 +1,7 @@
 package Tests;
 
-import Pages.AuthenticationPage;
-import Pages.CartPage;
-import Pages.ItemDetailPage;
-import Pages.ProductsPage;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
+import Pages.*;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -24,7 +19,7 @@ public class ItemDetailsTest extends BaseTest {
     @DataProvider()
     public Object[][] inventoryItemsTestOnProductPageData(){
         return new Object[][]{
-               {"Printed Dress","31,20"},
+                {"Printed Dress","31,20"},
                 {"Printed Chiffon Dress","24,60"},
                 {"Red Dress","180,00"},
                 {"White Crisscross Back Shift Dress","720,00"},

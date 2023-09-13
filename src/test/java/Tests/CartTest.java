@@ -1,20 +1,16 @@
 package Tests;
 
-import Pages.*;
+
 import io.qameta.allure.Description;
+
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+
 import org.testng.annotations.Test;
 
 public class CartTest extends BaseTest {
-    CartPage cartPage;
-    HomePage homePage;
-    ProductsPage productsPage;
-    ItemDetailPage itemDetailPage;
-    AddressesPage addressesPage;
-    MyAccountPage myAccountPage;
+
     final static String FIRST_NAME_FOR_ADDRESS_PAGE="Andrey";
     final static String LAST_NAME_FOR_ADDRESS_PAGE="Tarashkevich";
     final static String ADDRESS_FOR_ADDRESS_PAGE="street New home 1 flat 1";
@@ -34,7 +30,7 @@ public class CartTest extends BaseTest {
         itemDetailPage.clickAddToCardButton();
         itemDetailPage.waitForAddToCartItemIconDisplayed();
         Assert.assertTrue(itemDetailPage.isAddToCartItemIconDisplayed());
-        Assert.assertEquals(itemDetailPage.getAddToCartItemIconText(),"Product successfully added to your shopping cart");
+        Assert.assertEquals(itemDetailPage.getAddToCartItemIconText(),"Товар был успешно добавлен в вашу корзину");
     }
     @Test(groups = {"Smoke"})
     @Description("Remove product from cart")
